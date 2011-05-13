@@ -15,7 +15,7 @@ function autoload($class)
 	include $file;
 }
 
-set_include_path(__DIR__ . '/src');
+set_include_path(__DIR__ . '/../src');
 spl_autoload_register('autoload');
 require_once 'PEAR2/Console/Tools/Main.php';
 
