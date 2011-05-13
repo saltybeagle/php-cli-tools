@@ -10,31 +10,31 @@ Requirements
 Function List
 -------------
 
- * `\cli\out($msg, ...)`
- * `\cli\out_padded($msg, ...)`
- * `\cli\err($msg, ...)`
- * `\cli\line($msg = '', ...)`
- * `\cli\input()`
- * `\cli\prompt($question, $default = false, $marker = ':')`
- * `\cli\choose($question, $choices = 'yn', $default = 'n')`
- * `\cli\menu($items, $default = false, $title = 'Choose an Item')`
+ * `\PEAR2\Console\Tools\out($msg, ...)`
+ * `\PEAR2\Console\Tools\out_padded($msg, ...)`
+ * `\PEAR2\Console\Tools\err($msg, ...)`
+ * `\PEAR2\Console\Tools\line($msg = '', ...)`
+ * `\PEAR2\Console\Tools\input()`
+ * `\PEAR2\Console\Tools\prompt($question, $default = false, $marker = ':')`
+ * `\PEAR2\Console\Tools\choose($question, $choices = 'yn', $default = 'n')`
+ * `\PEAR2\Console\Tools\menu($items, $default = false, $title = 'Choose an Item')`
 
 Progress Indicators
 -------------------
 
- * `\cli\notifier\Dots($msg, $dots = 3, $interval = 100)`
- * `\cli\notifier\Spinner($msg, $interval = 100)`
- * `\cli\progress\Bar($msg, $total, $interval = 100)`
+ * `\PEAR2\Console\Tools\notifier\Dots($msg, $dots = 3, $interval = 100)`
+ * `\PEAR2\Console\Tools\notifier\Spinner($msg, $interval = 100)`
+ * `\PEAR2\Console\Tools\progress\Bar($msg, $total, $interval = 100)`
 
 Tabular Display
 ---------------
 
- * `\cli\Table::__construct(array $headers = null, array $rows = null)`
- * `\cli\Table::setHeaders(array $headers)`
- * `\cli\Table::setRows(array $rows)`
- * `\cli\Table::addRow(array $row)`
- * `\cli\Table::sort($column)`
- * `\cli\Table::display()`
+ * `\PEAR2\Console\Tools\Table::__construct(array $headers = null, array $rows = null)`
+ * `\PEAR2\Console\Tools\Table::setHeaders(array $headers)`
+ * `\PEAR2\Console\Tools\Table::setRows(array $rows)`
+ * `\PEAR2\Console\Tools\Table::addRow(array $row)`
+ * `\PEAR2\Console\Tools\Table::sort($column)`
+ * `\PEAR2\Console\Tools\Table::display()`
 
 Usage
 -----

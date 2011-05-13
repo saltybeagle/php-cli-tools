@@ -10,7 +10,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-namespace cli;
+namespace PEAR2\Console\Tools;
 
 /**
  * The `Table` class is used to display data in a tabular format.
@@ -71,9 +71,9 @@ class Table {
 	}
 
 	/**
-	 * Output the table to `STDOUT` using `cli\line()`.
+	 * Output the table to `STDOUT` using `PEAR2\Console\Tools\line()`.
 	 *
-	 * @see cli\Table::renderRow()
+	 * @see PEAR2\Console\Tools\Table::renderRow()
 	 */
 	public function display() {
 		$borderStr = '+';
@@ -81,15 +81,15 @@ class Table {
 			$borderStr .= '-' . str_repeat('-', $this->_width[$column]) . '-+';
 		}
 
-		\cli\line($borderStr);
-		\cli\line($this->renderRow($this->_headers));
-		\cli\line($borderStr);
+		\PEAR2\Console\Tools\line($borderStr);
+		\PEAR2\Console\Tools\line($this->renderRow($this->_headers));
+		\PEAR2\Console\Tools\line($borderStr);
 
 		foreach ($this->_rows as $row) {
-			\cli\line($this->renderRow($row));
+			\PEAR2\Console\Tools\line($this->renderRow($row));
 		}
 
-		\cli\line($borderStr);
+		\PEAR2\Console\Tools\line($borderStr);
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Table {
 	}
 
 	/**
-	 * Sort the table by a column. Must be called before `cli\Table::display()`.
+	 * Sort the table by a column. Must be called before `PEAR2\Console\Tools\Table::display()`.
 	 *
 	 * @param int  $column  The index of the column to sort by.
 	 */
@@ -135,7 +135,7 @@ class Table {
 	 * Add a row to the table.
 	 *
 	 * @param array  $row  The row data.
-	 * @see cli\Table::checkRow()
+	 * @see PEAR2\Console\Tools\Table::checkRow()
 	 */
 	public function addRow(array $row) {
 		$this->_rows[] = $this->checkRow($row);
@@ -145,7 +145,7 @@ class Table {
 	 * Clears all previous rows and adds the given rows.
 	 *
 	 * @param array  $rows  A 2-dimensional array of row data.
-	 * @see cli\Table::addRow()
+	 * @see PEAR2\Console\Tools\Table::addRow()
 	 */
 	public function setRows(array $rows) {
 		$this->_rows = array();

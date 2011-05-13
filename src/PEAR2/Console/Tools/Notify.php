@@ -10,7 +10,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-namespace cli;
+namespace PEAR2\Console\Tools;
 
 /**
  * The `Notify` class is the basis of all feedback classes, such as Indicators
@@ -42,11 +42,11 @@ abstract class Notify {
 
 	/**
 	 * This method should be used to print out the Notifier. This method is
-	 * called from `cli\Notify::tick()` after `cli\Notify::$_interval` has passed.
+	 * called from `PEAR2\Console\Tools\Notify::tick()` after `PEAR2\Console\Tools\Notify::$_interval` has passed.
 	 *
 	 * @abstract
 	 * @param boolean  $finish
-	 * @see cli\Notify::tick()
+	 * @see PEAR2\Console\Tools\Notify::tick()
 	 */
 	abstract public function display($finish = false);
 
@@ -116,12 +116,12 @@ abstract class Notify {
 	 * Finish our Notification display. Should be called after the Notifier is
 	 * no longer needed.
 	 *
-	 * @see cli\Notify::display()
+	 * @see PEAR2\Console\Tools\Notify::display()
 	 */
 	public function finish() {
-		\cli\out("\r");
+		\PEAR2\Console\Tools\out("\r");
 		$this->display(true);
-		\cli\line();
+		\PEAR2\Console\Tools\line();
 	}
 
 	/**
@@ -160,15 +160,15 @@ abstract class Notify {
 	 * and then update the display if enough time has passed since our last tick.
 	 *
 	 * @param int  $increment  The amount to increment by.
-	 * @see cli\Notify::increment()
-	 * @see cli\Notify::shouldUpdate()
-	 * @see cli\Notify::display()
+	 * @see PEAR2\Console\Tools\Notify::increment()
+	 * @see PEAR2\Console\Tools\Notify::shouldUpdate()
+	 * @see PEAR2\Console\Tools\Notify::display()
 	 */
 	public function tick($increment = 1) {
 		$this->increment($increment);
 
 		if ($this->shouldUpdate()) {
-			\cli\out("\r");
+			\PEAR2\Console\Tools\out("\r");
 			$this->display();
 		}
 	}

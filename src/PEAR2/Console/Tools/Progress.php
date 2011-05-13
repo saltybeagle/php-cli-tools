@@ -10,16 +10,16 @@
  * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-namespace cli;
+namespace PEAR2\Console\Tools;
 
 /**
  * A more complex type of Notifier, `Progress` Notifiers always have a maxim
  * value and generally show some form of percent complete or estimated time
  * to completion along with the standard Notifier displays.
  *
- * @see cli\Notify
+ * @see PEAR2\Console\Tools\Notify
  */
-abstract class Progress extends \cli\Notify {
+abstract class Progress extends \PEAR2\Console\Tools\Notify {
 	protected $_total = 0;
 
 	/**
@@ -40,11 +40,11 @@ abstract class Progress extends \cli\Notify {
 	}
 
 	/**
-	 * Behaves in a similar manner to `cli\Notify::current()`, but the output
-	 * is padded to match the length of `cli\Progress::total()`.
+	 * Behaves in a similar manner to `PEAR2\Console\Tools\Notify::current()`, but the output
+	 * is padded to match the length of `PEAR2\Console\Tools\Progress::total()`.
 	 *
 	 * @return string  The formatted and padded tick count.
-	 * @see cli\Progress::total()
+	 * @see PEAR2\Console\Tools\Progress::total()
 	 */
 	public function current() {
 		$size = strlen($this->total());
@@ -66,8 +66,8 @@ abstract class Progress extends \cli\Notify {
 	 *
 	 * @return int  The estimated total number of seconds for all ticks to be
 	 *              completed. This is not the estimated time left, but total.
-	 * @see cli\Notify::speed()
-	 * @see cli\Notify::elapsed()
+	 * @see PEAR2\Console\Tools\Notify::speed()
+	 * @see PEAR2\Console\Tools\Notify::elapsed()
 	 */
 	public function estimated() {
 		$speed = $this->speed();
@@ -81,7 +81,7 @@ abstract class Progress extends \cli\Notify {
 
 	/**
 	 * Forces the current tick count to the total ticks given at instatiation
-	 * time before passing on to `cli\Notify::finish()`.
+	 * time before passing on to `PEAR2\Console\Tools\Notify::finish()`.
 	 */
 	public function finish() {
 		$this->_current = $this->_total;

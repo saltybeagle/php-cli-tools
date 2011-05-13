@@ -10,7 +10,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-namespace cli;
+namespace PEAR2\Console\Tools;
 
 /**
  * Change the color of text.

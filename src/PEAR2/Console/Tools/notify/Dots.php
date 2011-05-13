@@ -10,12 +10,12 @@
  * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-namespace cli\notify;
+namespace PEAR2\Console\Tools\notify;
 
 /**
  * A Notifer that displays a string of periods.
  */
-class Dots extends \cli\Notify {
+class Dots extends \PEAR2\Console\Tools\Notify {
 	protected $_dots;
 	protected $_format = '{:msg}{:dots}  ({:elapsed}, {:speed}/s)';
 	protected $_iteration;
@@ -41,10 +41,10 @@ class Dots extends \cli\Notify {
 	 * tick speed.
 	 *
 	 * @param boolean  $finish  `true` if this was called from
-	 *                          `cli\Notify::finish()`, `false` otherwise.
-	 * @see cli\out_padded()
-	 * @see cli\Notify::formatTime()
-	 * @see cli\Notify::speed()
+	 *                          `PEAR2\Console\Tools\Notify::finish()`, `false` otherwise.
+	 * @see PEAR2\Console\Tools\out_padded()
+	 * @see PEAR2\Console\Tools\Notify::formatTime()
+	 * @see PEAR2\Console\Tools\Notify::speed()
 	 */
 	public function display($finish = false) {
 		$repeat = $this->_dots;
@@ -57,6 +57,6 @@ class Dots extends \cli\Notify {
 		$speed = number_format(round($this->speed()));
 		$elapsed = $this->formatTime($this->elapsed());
 
-		\cli\out_padded($this->_format, compact('msg', 'dots', 'speed', 'elapsed'));
+		\PEAR2\Console\Tools\out_padded($this->_format, compact('msg', 'dots', 'speed', 'elapsed'));
 	}
 }
